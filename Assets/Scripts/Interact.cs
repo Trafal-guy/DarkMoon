@@ -1,0 +1,223 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Interact : MonoBehaviour
+{
+    public float length;
+    public GameObject uiObject;
+    public GameObject uiObject2;
+    public GameObject uiObject3;
+    public GameObject text;
+    public GameObject text2;
+    public GameObject text3;
+    public bool isCarryingWater = false;
+    public bool waterIsWorking = false;
+    private bool textIsOnScreen = false;
+    public GameObject fireplaceKey;
+    public GameObject waterTankKey;
+    public GameObject secretCompartmentKey;
+    public GameObject normalWater;
+    public GameObject fallingWater;
+    public GameObject kitchenTable;
+    public GameObject normalTable;
+    public PlayerCamera player;
+    public GameObject ghost, ghost2, ghost3;
+    public GameObject trigger, trigger2, trigger3;
+    public Text numberOfKeys;
+    public int keys;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        uiObject.SetActive(false);
+        uiObject2.SetActive(false);
+        uiObject3.SetActive(false);
+        fireplaceKey.SetActive(false);
+        waterTankKey.SetActive(false);
+        text.SetActive(false);
+        text2.SetActive(false);
+        text3.SetActive(false);
+        secretCompartmentKey.SetActive(false);
+        normalWater.SetActive(false);
+        fallingWater.SetActive(false);
+        kitchenTable.SetActive(false);
+        ghost.SetActive(false);
+        ghost2.SetActive(false);
+        ghost3.SetActive(false);
+        trigger2.SetActive(false);
+        //trigger3.SetActive(false);
+        numberOfKeys = GetComponent<Text>();
+        keys = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //numberOfKeys.text = keys.ToString();
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit, length))
+            {
+
+                if(hit.collider.CompareTag("Door"))
+                {
+                    DoorScript doorScript = hit.collider.transform.parent.GetComponent<DoorScript>();
+
+                    if (doorScript == null)
+                        return;
+
+                    if (Inventory.keys[doorScript.index] == true)
+                    {
+                        doorScript.ChangeDoorState();
+                        FindObjectOfType<AudioManager>().Play("OpenDoor");
+                    }
+                    else
+                        FindObjectOfType<AudioManager>().Play("LockedDoor");
+
+                    Debug.Log("Colidi");
+                    //player.ChangeCameraStateTrue();
+                   
+
+                }
+                if(hit.collider.CompareTag("Key"))
+                {
+                    Inventory.keys[hit.collider.GetComponent<KeyScript>().index] = true;
+                    uiObject.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                    Debug.Log("ColidiCarai");
+                    //Destroy(gameObject);
+                    FindObjectOfType<AudioManager>().Play("GetKey");
+
+                    KeyScript keyScript = hit.collider.transform.GetComponent<KeyScript>();
+                    keyScript.DestroyKey();
+                    keys++;
+                }
+
+                //Interactable intercactable = hit.collider.GetComponent<Interactable>();
+
+                if(hit.collider.CompareTag("AnimInteractable"))
+                {
+                    PlayAnimation animation = hit.collider.transform.GetComponent<PlayAnimation>();
+                    animation.AnimPlay();
+                    Debug.Log("TaFuncionando"); //Não ta funcionando ;-;
+                }
+
+                if (hit.collider.CompareTag("Sink") && isCarryingWater == false)
+                {
+                    if (waterIsWorking)
+                    {
+                        isCarryingWater = true;
+                        Debug.Log("PEGUEI A AGUA");
+                        uiObject2.SetActive(true);
+                        StartCoroutine("WaitForSec");
+                        trigger2.SetActive(true);
+                    }
+                    else
+                    {
+                        uiObject3.SetActive(true);
+                        StartCoroutine("WaitForSec");
+                    }
+                }
+
+                if(hit.collider.CompareTag("Fire"))
+                {
+                    if (isCarryingWater == true)
+                    {
+                        FireScript fireParticles = hit.collider.transform.GetComponent<FireScript>();
+                        fireParticles.DestroyFire();
+                        Debug.Log("APAGUEI O FOGO");
+                        fireplaceKey.SetActive(true);
+                        isCarryingWater = false;
+                    }
+
+                    else
+                    {
+                        text3.SetActive(true);
+                        StartCoroutine("WaitForSec");
+                    }
+                }
+
+                if(hit.collider.CompareTag("Regulator") && waterIsWorking == false)
+                {
+                    waterIsWorking = true;
+                    Debug.Log("LIGUEI O REGISTRO");
+                    text.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                    kitchenTable.SetActive(true);
+                    normalTable.SetActive(false);
+                    //PoisonedWaterScript blackWater = hit.collider.transform.GetComponent<PoisonedWaterScript>();
+                    //blackWater.DestroyWater();
+                    //Debug.Log("RIP AGUA DA MORTE");
+                    //waterTankKey.SetActive(true);
+                    //normalWater.SetActive(true);
+                    //fallingWater.SetActive(true);
+                }
+
+                if(hit.collider.CompareTag("PoisonedWater"))
+                {
+                    if(waterIsWorking)
+                    {
+                        PoisonedWaterScript blackWater = hit.collider.transform.GetComponent<PoisonedWaterScript>();
+                        blackWater.DestroyWater();
+                        Debug.Log("RIP AGUA DA MORTE");
+                        waterTankKey.SetActive(true);
+                        normalWater.SetActive(true);
+                        fallingWater.SetActive(true);
+                    }
+
+                    else
+                    {
+                        text2.SetActive(true);
+                        StartCoroutine("WaitForSec");
+                    }
+
+                }
+
+                if(hit.collider.CompareTag("MovableFloor"))
+                {
+                    FloorScript floor = hit.collider.transform.GetComponent<FloorScript>();
+                    floor.DestroyFloor();
+                    secretCompartmentKey.SetActive(true);
+                }
+
+                if(hit.collider.CompareTag("Text"))
+                {
+                    PrintMessage text = hit.collider.transform.GetComponent<PrintMessage>();
+                    text.ShowText();
+                    text.TextOnScreen();
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
+
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(2);
+        uiObject.SetActive(false);
+        uiObject2.SetActive(false);
+        uiObject3.SetActive(false);
+        text.SetActive(false);
+        text2.SetActive(false);
+        text3.SetActive(false);
+        //player.ChangeCameraStateFalse();
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.CompareTag("JumpScare"))
+        {
+            ghost.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("Scream");
+            Destroy(trigger);
+            Debug.Log("JUMPSCARE");
+        }
+    }
+}
