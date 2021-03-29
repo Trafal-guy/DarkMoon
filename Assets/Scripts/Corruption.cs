@@ -14,7 +14,7 @@ public class Corruption : MonoBehaviour
 
     private void Update()
     {
-        if (levelOfCorruption >= 240)
+        if (levelOfCorruption >= 300)
             SceneManager.LoadScene("Menu");
     }
 

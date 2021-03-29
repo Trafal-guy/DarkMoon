@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 471}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 471}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -114,10 +114,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 909, y: 421}
-  m_MaxSize: {x: 22004, y: 10021}
+  m_MinSize: {x: 911, y: 442}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 569
+  controlID: 7149
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,10 +139,10 @@ MonoBehaviour:
     y: 0
     width: 767
     height: 947
-  m_MinSize: {x: 201, y: 421}
-  m_MaxSize: {x: 4001, y: 8021}
+  m_MinSize: {x: 201, y: 442}
+  m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 660
+  controlID: 7150
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -401,9 +401,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -46.678192, y: -11.4980755, z: 5.5172}
+    m_Target: {x: -40.33, y: 1.4794159, z: -2.6}
     speed: 2
-    m_Value: {x: -46.678192, y: -11.4980755, z: 5.5172}
+    m_Value: {x: -40.33, y: 1.4794159, z: -2.6}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -449,13 +449,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.39709872, y: 0.18305187, z: -0.08116298, w: -0.89568233}
+    m_Target: {x: -0.20824428, y: -0.17584136, z: 0.038092177, w: -0.9614054}
     speed: 2
-    m_Value: {x: -0.39709872, y: 0.18305187, z: -0.08116298, w: -0.89568233}
+    m_Value: {x: -0.2082404, y: -0.1758381, z: 0.03809147, w: -0.9613875}
   m_Size:
-    m_Target: 20.58251
+    m_Target: 3.866025
     speed: 2
-    m_Value: 20.58251
+    m_Value: 3.866025
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -511,7 +511,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 4efaffff7cfbffff403b0000
+      m_ExpandedIDs: c09affff2c4700009c490000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -573,20 +573,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Game Objects/monstro
+    m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Christopher\Documents\My games\DarkMoon\JogoOficina4
+  m_LastProjectPath: C:\Users\Christopher\Documents\GitHub\DarkMoon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 0a3c0000
     m_LastClickedID: 15370
-    m_ExpandedIDs: ffffffff000000008e4200009042000092420000964200009842000060430000f6430000
+    m_ExpandedIDs: 2c9affff6c9dffffffffffff00000000844a0000864a0000884a00008a4a00008c4a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -614,7 +613,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000008e4200009042000092420000964200009842000060430000
+    m_ExpandedIDs: 2c9affff6c9dffffffffffff00000000844a0000864a0000884a00008a4a00008c4a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

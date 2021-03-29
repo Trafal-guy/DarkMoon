@@ -22,6 +22,7 @@ public class Interact : MonoBehaviour
     public GameObject fallingWater;
     public GameObject kitchenTable;
     public GameObject normalTable;
+    public GameObject boiler;
     public PlayerCamera player;
     public GameObject ghost, ghost2, ghost3;
     public GameObject trigger, trigger2, trigger3;
@@ -191,6 +192,9 @@ public class Interact : MonoBehaviour
                     text.ShowText();
                     text.TextOnScreen();
                 }
+
+                if (hit.collider.gameObject.name == "Boiler")
+                    boiler.SetActive(false);
             }
         }
 
