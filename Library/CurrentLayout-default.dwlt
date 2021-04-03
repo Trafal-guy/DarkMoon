@@ -117,7 +117,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 7149
+  controlID: 155
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 7150
+  controlID: 34
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -401,9 +401,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -40.33, y: 1.4794159, z: -2.6}
+    m_Target: {x: -43.39086, y: 3.84443, z: 17.17678}
     speed: 2
-    m_Value: {x: -40.33, y: 1.4794159, z: -2.6}
+    m_Value: {x: -43.39086, y: 3.84443, z: 17.17678}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -449,13 +449,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.20824428, y: -0.17584136, z: 0.038092177, w: -0.9614054}
+    m_Target: {x: -0.15596855, y: 0.31458685, z: -0.052478995, w: -0.9348755}
     speed: 2
-    m_Value: {x: -0.2082404, y: -0.1758381, z: 0.03809147, w: -0.9613875}
+    m_Value: {x: -0.15604419, y: 0.31317836, z: -0.05224401, w: -0.9353289}
   m_Size:
-    m_Target: 3.866025
+    m_Target: 7.9387355
     speed: 2
-    m_Value: 3.866025
+    m_Value: 8.312812
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -511,7 +511,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c09affff2c4700009c490000
+      m_ExpandedIDs: 4efaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -578,14 +578,14 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Christopher\Documents\GitHub\DarkMoon
+  m_LastProjectPath: D:\projetos\Dark Moon\DarkMoon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 0a3c0000
     m_LastClickedID: 15370
-    m_ExpandedIDs: 2c9affff6c9dffffffffffff00000000844a0000864a0000884a00008a4a00008c4a0000
+    m_ExpandedIDs: 000000000043000002430000044300000643000008430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,7 +613,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 2c9affff6c9dffffffffffff00000000844a0000864a0000884a00008a4a00008c4a0000
+    m_ExpandedIDs: ffffffff000000000043000002430000044300000643000008430000c6440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
