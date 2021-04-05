@@ -57,7 +57,10 @@ public class PlayerMovement : MonoBehaviour
         if ((verticalInput != 0 || horizontalInput != 0) && OnSlope())
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
 
-        SetMovementSpeed();
+        //Arrumar depois
+        //SetMovementSpeed();
+        //fim arrumar depois
+
         //FindObjectOfType<AudioManager>().Play("Walk");
 
         if(Input.GetKeyDown(crouchKey))
@@ -89,6 +92,11 @@ public class PlayerMovement : MonoBehaviour
             speed = Mathf.Lerp(speed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
 
         //FindObjectOfType<AudioManager>().Play("Walk");
+    }
+
+    public void SetPlayerSpeed(int newSpeed)
+    {
+        speed = newSpeed;
     }
 
     private void Crouch()

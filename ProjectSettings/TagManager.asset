@@ -16,6 +16,9 @@ TagManager:
   - Text
   - JumpScare
   - GhostTrigger
+  - RightDoor
+  - WrongDoor
+  - Spawn
   layers:
   - Default
   - TransparentFX

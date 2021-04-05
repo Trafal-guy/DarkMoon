@@ -28,10 +28,20 @@ public class Interact : MonoBehaviour
     public GameObject trigger, trigger2, trigger3;
     public Text numberOfKeys;
     public int keys;
+
+    //testes
+    public GameObject character;
+    private PlayerMovement pm;
+    public GameObject spawner;
+    //fim testes
     
     // Start is called before the first frame update
     void Start()
     {
+        //testes
+        pm = character.GetComponent<PlayerMovement>();
+        //fim testes
+
         uiObject.SetActive(false);
         uiObject2.SetActive(false);
         uiObject3.SetActive(false);
@@ -90,7 +100,7 @@ public class Interact : MonoBehaviour
                     Inventory.keys[hit.collider.GetComponent<KeyScript>().index] = true;
                     uiObject.SetActive(true);
                     StartCoroutine("WaitForSec");
-                    Debug.Log("ColidiCarai");
+                    //Debug.Log("ColidiCarai");
                     //Destroy(gameObject);
                     FindObjectOfType<AudioManager>().Play("GetKey");
 
@@ -105,7 +115,7 @@ public class Interact : MonoBehaviour
                 {
                     PlayAnimation animation = hit.collider.transform.GetComponent<PlayAnimation>();
                     animation.AnimPlay();
-                    Debug.Log("TaFuncionando"); //Não ta funcionando ;-;
+                    Debug.Log("TaFuncionando"); //Não ta funcionando ;-; T-T
                 }
 
                 if (hit.collider.CompareTag("Sink") && isCarryingWater == false)
@@ -194,7 +204,46 @@ public class Interact : MonoBehaviour
                 }
 
                 if (hit.collider.gameObject.name == "Boiler")
+                {
                     boiler.SetActive(false);
+                }
+
+                if (hit.collider.CompareTag("RightDoor"))
+                {
+                    DoorScript doorScript = hit.collider.transform.parent.GetComponent<DoorScript>();
+
+                    if (doorScript == null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        doorScript.ChangeDoorState();
+                        FindObjectOfType<AudioManager>().Play("OpenDoor");
+                    }
+
+                    //player.ChangeCameraStateTrue();
+                }
+
+                if (hit.collider.CompareTag("WrongDoor"))
+                {
+                    DoorScript doorScript = hit.collider.transform.parent.GetComponent<DoorScript>();
+
+                    if (doorScript == null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        doorScript.ChangeDoorState();
+                        pm.SetPlayerSpeed(0);
+                        StartCoroutine(WrongDoorEvent());
+                        FindObjectOfType<AudioManager>().Play("OpenDoor");
+                        //pm.SetPlayerSpeed(0);
+                    }
+
+                    //player.ChangeCameraStateTrue();
+                }
             }
         }
 
@@ -212,6 +261,14 @@ public class Interact : MonoBehaviour
         text2.SetActive(false);
         text3.SetActive(false);
         //player.ChangeCameraStateFalse();
+    }
+
+    IEnumerator WrongDoorEvent()
+    {
+        yield return new WaitForSeconds(2);
+        character.transform.position = spawner.transform.position;
+        yield return new WaitForSeconds(1);
+        pm.SetPlayerSpeed(5);
     }
 
     private void OnTriggerEnter(Collider collision)

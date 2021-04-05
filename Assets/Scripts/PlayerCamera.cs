@@ -11,6 +11,10 @@ public class PlayerCamera : MonoBehaviour
 
     private float xAxisClamp;
 
+    //testes
+    public float length;
+    //fim testes
+
     private void Awake()
     {
         LockCursor();
@@ -21,10 +25,32 @@ public class PlayerCamera : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    //testes
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+    //fim testes
+
     private void Update()
     {
-        if(isLocked == false)
+        if (isLocked == false)
             CameraRotation();
+
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        //testes
+        if (Physics.Raycast(ray, out hit, length))
+        {
+            if (hit.collider.CompareTag("Key"))
+            {
+                //UnlockCursor();
+                Cursor.visible = true;
+                //print("cubunda");
+            }
+        }
+        //fim testes
     }
 
     private void CameraRotation()
