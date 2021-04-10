@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "Trigger")
+        if (collision.gameObject.name == "BathroomJumpscareTrigger")
         {
             ghost.SetActive(true);
             FindObjectOfType<AudioManager>().Play("Scream");
@@ -124,24 +124,24 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine("JumpscareTimer");
         }
 
-        if(collision.gameObject.name == "Trigger2")
+        if(collision.gameObject.name == "LivingRoomGhostTrigger")
         {
             ghost2.SetActive(true);
             Destroy(trigger1);
         }
 
-        if(collision.gameObject.name == "Trigger3")
+        if(collision.gameObject.name == "KitchenGhostTrigger")
         {
             ghost3.SetActive(true);
             Destroy(trigger2);
         }
 
-        if(collision.gameObject.name == "Trigger4")
+        if(collision.gameObject.name == "BedroomKnockingJumpscareTrigger")
         {
             FindObjectOfType<AudioManager>().Play("Knock");
             Destroy(trigger3);
         }
-        if (collision.gameObject.name == "Trigger5")
+        if (collision.gameObject.name == "WinConditionTrigger")
             SceneManager.LoadScene("Menu");
     }
 

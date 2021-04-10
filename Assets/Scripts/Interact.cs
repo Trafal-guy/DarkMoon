@@ -9,6 +9,7 @@ public class Interact : MonoBehaviour
     public GameObject uiObject;
     public GameObject uiObject2;
     public GameObject uiObject3;
+    public GameObject uiObject4;
     public GameObject text;
     public GameObject text2;
     public GameObject text3;
@@ -22,12 +23,14 @@ public class Interact : MonoBehaviour
     public GameObject fallingWater;
     public GameObject kitchenTable;
     public GameObject normalTable;
-    public GameObject boiler;
     public PlayerCamera player;
     public GameObject ghost, ghost2, ghost3;
     public GameObject trigger, trigger2, trigger3;
+    //public GameObject phone, tv, clock, boiler;
     public Text numberOfKeys;
     public int keys;
+    public int soundEmitter;
+
 
     //testes
     public GameObject character;
@@ -45,6 +48,7 @@ public class Interact : MonoBehaviour
         uiObject.SetActive(false);
         uiObject2.SetActive(false);
         uiObject3.SetActive(false);
+        uiObject4.SetActive(false);
         fireplaceKey.SetActive(false);
         waterTankKey.SetActive(false);
         text.SetActive(false);
@@ -61,6 +65,8 @@ public class Interact : MonoBehaviour
         //trigger3.SetActive(false);
         numberOfKeys = GetComponent<Text>();
         keys = 0;
+        soundEmitter = 0;
+        //boiler.SetActive(false);
     }
 
     // Update is called once per frame
@@ -95,7 +101,28 @@ public class Interact : MonoBehaviour
                    
 
                 }
-                if(hit.collider.CompareTag("Key"))
+
+                if (hit.collider.CompareTag("FinalDoor"))
+                {
+                    DoorScript doorScript = hit.collider.transform.parent.GetComponent<DoorScript>();
+
+                    if (doorScript == null)
+                        return;
+
+                    if (Inventory.keys[doorScript.index] == true && soundEmitter >=4)
+                    {
+                        doorScript.ChangeDoorState();
+                        FindObjectOfType<AudioManager>().Play("OpenDoor");
+                    }
+                    else
+                        FindObjectOfType<AudioManager>().Play("LockedDoor");
+
+                    Debug.Log("Colidi");
+                    //player.ChangeCameraStateTrue();
+
+
+                }
+                if (hit.collider.CompareTag("Key"))
                 {
                     Inventory.keys[hit.collider.GetComponent<KeyScript>().index] = true;
                     uiObject.SetActive(true);
@@ -203,10 +230,10 @@ public class Interact : MonoBehaviour
                     text.TextOnScreen();
                 }
 
-                if (hit.collider.gameObject.name == "Boiler")
-                {
-                    boiler.SetActive(false);
-                }
+               // if (hit.collider.gameObject.name == "Boiler")
+               // {
+                   // boiler.SetActive(false);
+                //}
 
                 if (hit.collider.CompareTag("RightDoor"))
                 {
@@ -244,6 +271,34 @@ public class Interact : MonoBehaviour
 
                     //player.ChangeCameraStateTrue();
                 }
+
+                if(hit.collider.CompareTag("SoundPuzzle"))
+                {
+                    Inventory.soundPuzzleObjects[hit.collider.GetComponent<SoundPuzzleScript>().index] = true;
+
+                    SoundPuzzleScript soundPuzzle = hit.collider.transform.GetComponent<SoundPuzzleScript>();
+                    soundPuzzle.AddIndex();
+                    soundPuzzle.DestroyObject();
+                    uiObject4.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                   // soundEmitter++;
+                }
+
+                if(hit.collider.CompareTag("NoiseEmitter"))
+                {
+                    NoiseEmitterScript noiseEmitterScript = hit.collider.transform.GetComponent<NoiseEmitterScript>();
+
+                    if (noiseEmitterScript == null)
+                        return;
+
+
+                    if (Inventory.soundPuzzleObjects[noiseEmitterScript.index] == true)
+                    {
+                        soundEmitter++;
+                        noiseEmitterScript.ActivateObject();
+                        print(soundEmitter);
+                    }
+                }
             }
         }
 
@@ -257,6 +312,7 @@ public class Interact : MonoBehaviour
         uiObject.SetActive(false);
         uiObject2.SetActive(false);
         uiObject3.SetActive(false);
+        uiObject4.SetActive(false);
         text.SetActive(false);
         text2.SetActive(false);
         text3.SetActive(false);

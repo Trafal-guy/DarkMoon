@@ -19,6 +19,9 @@ TagManager:
   - RightDoor
   - WrongDoor
   - Spawn
+  - SoundPuzzle
+  - NoiseEmitter
+  - FinalDoor
   layers:
   - Default
   - TransparentFX
