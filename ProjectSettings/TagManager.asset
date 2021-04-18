@@ -22,6 +22,10 @@ TagManager:
   - SoundPuzzle
   - NoiseEmitter
   - FinalDoor
+  - Interruptor1
+  - Interruptor2
+  - Interruptor3
+  - Interruptor4
   layers:
   - Default
   - TransparentFX
