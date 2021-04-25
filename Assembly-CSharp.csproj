@@ -82,6 +82,8 @@
     <Compile Include="Assets\Scripts\PoisonedWaterScript.cs" />
     <Compile Include="Assets\Scripts\PrintMessage.cs" />
     <Compile Include="Assets\Scripts\ScriptTeste.cs" />
+    <Compile Include="Assets\Scripts\ScriptTesteImagem.cs" />
+    <Compile Include="Assets\Scripts\ScriptTesteImagemController.cs" />
     <Compile Include="Assets\Scripts\ScriptTesteInterruptor.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\SoundPuzzleScript.cs" />

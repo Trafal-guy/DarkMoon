@@ -19,6 +19,7 @@ public class ScriptTeste : MonoBehaviour
         if (valorTotal == 8)
         {
             print("deu");
+            valorTotal += 1;
         }
     }
 }
