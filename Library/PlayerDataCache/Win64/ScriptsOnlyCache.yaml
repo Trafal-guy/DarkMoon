@@ -19,9 +19,21 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - PoisonedWaterScript
     - PrintMessage
+    - Rotate
+    - ScriptTeste
+    - ScriptTesteImagem
+    - ScriptTesteImagemController
     - SoundPuzzleScript
     - Start
     - Transition
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -56,23 +68,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11218}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11350}
     - Class: 114
-      Script: {instanceID: 11366}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11718}
+      Script: {instanceID: 11744}
     - Class: 114
-      Script: {instanceID: 11734}
+      Script: {instanceID: 11760}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 12066}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12786}
+      Script: {instanceID: 12820}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -131,57 +143,65 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11194}
+      Script: {instanceID: 11216}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11218}
     - Class: 114
-      Script: {instanceID: 11258}
+      Script: {instanceID: 11280}
     - Class: 114
-      Script: {instanceID: 11302}
+      Script: {instanceID: 11290}
     - Class: 114
       Script: {instanceID: 11326}
     - Class: 114
-      Script: {instanceID: 11366}
+      Script: {instanceID: 11350}
     - Class: 114
-      Script: {instanceID: 11508}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11532}
     - Class: 114
-      Script: {instanceID: 11652}
+      Script: {instanceID: 11658}
     - Class: 114
-      Script: {instanceID: 11718}
+      Script: {instanceID: 11676}
     - Class: 114
-      Script: {instanceID: 11740}
+      Script: {instanceID: 11744}
     - Class: 114
-      Script: {instanceID: 11786}
+      Script: {instanceID: 11766}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11812}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11830}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 11922}
     - Class: 114
-      Script: {instanceID: 12066}
+      Script: {instanceID: 11932}
     - Class: 114
-      Script: {instanceID: 12212}
+      Script: {instanceID: 11954}
     - Class: 114
-      Script: {instanceID: 12214}
+      Script: {instanceID: 11978}
     - Class: 114
-      Script: {instanceID: 12332}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 12396}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12786}
+      Script: {instanceID: 12364}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12416}
     - Class: 114
-      Script: {instanceID: 18042}
+      Script: {instanceID: 12430}
     - Class: 114
-      Script: {instanceID: 20446}
+      Script: {instanceID: 12490}
+    - Class: 114
+      Script: {instanceID: 12716}
+    - Class: 114
+      Script: {instanceID: 12820}
+    - Class: 114
+      Script: {instanceID: 12842}
+    - Class: 114
+      Script: {instanceID: 18528}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -228,19 +248,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11218}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11350}
     - Class: 114
-      Script: {instanceID: 11366}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11718}
+      Script: {instanceID: 11744}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12554}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12786}
+      Script: {instanceID: 12820}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -300,6 +320,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: JumpScare
+  - hash:
+      serializedVersion: 2
+      Hash: e104dd5af934ca41c6f9c4cb08d0bfcc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptTeste
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -470,6 +496,12 @@ ScriptsOnlyBuild:
     className: AudioManager
   - hash:
       serializedVersion: 2
+      Hash: ea156256d71ceafe0920389ef2b9397d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptTesteInterruptor
+  - hash:
+      serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
     assemblyName: Unity.Analytics.Tracker.dll
     namespaceName: UnityEngine.Analytics
@@ -524,10 +556,16 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 9196dc930deb11f204505042bc7380b6
+      Hash: 159a13e83f0323e1772ff5a0bb473525
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
+  - hash:
+      serializedVersion: 2
+      Hash: f450bd92c660880e07a6cb4e4f93cd6d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundPuzzleScript
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -566,6 +604,12 @@ ScriptsOnlyBuild:
     className: Enemy
   - hash:
       serializedVersion: 2
+      Hash: 430ff55fc18bbb2e88b96a65a0480893
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NoiseEmitterScript
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Analytics.Editor.dll
     namespaceName: UnityEditor.Analytics
@@ -576,6 +620,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Water
     className: PlanarReflection
+  - hash:
+      serializedVersion: 2
+      Hash: 32a12242827495c90d74d16979d1a375
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptTesteImagem
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -696,6 +746,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PoisonedWaterScript
+  - hash:
+      serializedVersion: 2
+      Hash: 332b0ab14b34b153fd19fef50f9acd5a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptTesteImagemController
   - hash:
       serializedVersion: 2
       Hash: b5097f39093edd0b48016ea920d00338
@@ -860,16 +916,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: f450bd92c660880e07a6cb4e4f93cd6d
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: SoundPuzzleScript
-  - hash:
-      serializedVersion: 2
-      Hash: 430ff55fc18bbb2e88b96a65a0480893
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NoiseEmitterScript
+    className: Rotate
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

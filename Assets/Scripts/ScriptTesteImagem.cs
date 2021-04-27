@@ -8,35 +8,37 @@ public class ScriptTesteImagem : MonoBehaviour
     public GameObject mainCamera;
     public int valor;
     public bool ativo;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         ativo = false;
-        if (name == "imgInterruptor 1")
+        if (name == "Switch1")
         {
             valor = mainCamera.GetComponent<ScriptTesteImagemController>().elements[0];
         }
-        else if (name == "imgInterruptor 2")
+        else if (name == "Switch2")
         {
             valor = mainCamera.GetComponent<ScriptTesteImagemController>().elements[1];
         }
-        else if (name == "imgInterruptor 3")
+        else if (name == "Switch3")
         {
             valor = mainCamera.GetComponent<ScriptTesteImagemController>().elements[2];
         }
-        else if (name == "imgInterruptor 4")
+        else if (name == "Switch4")
         {
             valor = mainCamera.GetComponent<ScriptTesteImagemController>().elements[3];
         }
-        else if (name == "imgInterruptor 5")
+        else if (name == "Switch5")
         {
             valor = mainCamera.GetComponent<ScriptTesteImagemController>().elements[4];
         }
-        else if (name == "imgInterruptor 6")
+        else if (name == "Switch6")
         {
             valor = mainCamera.GetComponent<ScriptTesteImagemController>().elements[5];
         }
+        
     }
 
     // Update is called once per frame
@@ -68,6 +70,8 @@ public class ScriptTesteImagem : MonoBehaviour
             {
                 mainCamera.GetComponent<ScriptTesteImagemController>().panel4.SetActive(true);
                 mainCamera.GetComponent<ScriptTesteImagemController>().valorFinal -= 1;
+                //anim.SetBool("IsOn", true);
+                
             }
             else if(valor == 5)
             {
@@ -80,6 +84,7 @@ public class ScriptTesteImagem : MonoBehaviour
                 mainCamera.GetComponent<ScriptTesteImagemController>().valorFinal += 1;
             }
             ativo = true;
+            FindObjectOfType<AudioManager>().Play("Switch");
         }
         else
         {
@@ -102,6 +107,7 @@ public class ScriptTesteImagem : MonoBehaviour
             {
                 mainCamera.GetComponent<ScriptTesteImagemController>().panel4.SetActive(false);
                 mainCamera.GetComponent<ScriptTesteImagemController>().valorFinal += 1;
+                //anim.SetBool("isOn", false);
             }
             else if (valor == 5)
             {
@@ -116,5 +122,6 @@ public class ScriptTesteImagem : MonoBehaviour
             ativo = false;
         }
         print(mainCamera.GetComponent<ScriptTesteImagemController>().valorFinal);
+        FindObjectOfType<AudioManager>().Play("Switch");
     }
 }

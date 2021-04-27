@@ -23,8 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController charController;
     [SerializeField] private GameObject ghost, ghost2, ghost3;
-    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3;
+    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4;
     [SerializeField] private PlayerCamera camera;
+    [SerializeField] private GameObject chairs, diningTable;
 
 
     private void Awake()
@@ -140,6 +141,13 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("Knock");
             Destroy(trigger3);
+        }
+
+        if(collision.gameObject.name == "ChairsTrigger")
+        {
+            chairs.SetActive(true);
+            diningTable.SetActive(false);
+            Destroy(trigger4);
         }
         if (collision.gameObject.name == "WinConditionTrigger")
             SceneManager.LoadScene("Menu");
