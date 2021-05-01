@@ -54,7 +54,7 @@ public class Interact : MonoBehaviour
         text.SetActive(false);
         text2.SetActive(false);
         text3.SetActive(false);
-        secretCompartmentKey.SetActive(false);
+        //secretCompartmentKey.SetActive(false);
         normalWater.SetActive(false);
         fallingWater.SetActive(false);
         kitchenTable.SetActive(false);
@@ -220,7 +220,7 @@ public class Interact : MonoBehaviour
                 {
                     FloorScript floor = hit.collider.transform.GetComponent<FloorScript>();
                     floor.DestroyFloor();
-                    secretCompartmentKey.SetActive(true);
+                    //secretCompartmentKey.SetActive(true);
                 }
 
                 if(hit.collider.CompareTag("Text"))

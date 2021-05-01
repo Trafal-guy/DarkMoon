@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject ghost, ghost2, ghost3;
     [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4;
     [SerializeField] private PlayerCamera camera;
-    [SerializeField] private GameObject chairs, diningTable;
+    [SerializeField] private GameObject chairs, diningTable, modernTable;
 
 
     private void Awake()
@@ -147,6 +147,7 @@ public class PlayerMovement : MonoBehaviour
         {
             chairs.SetActive(true);
             diningTable.SetActive(false);
+            modernTable.SetActive(true);
             Destroy(trigger4);
         }
         if (collision.gameObject.name == "WinConditionTrigger")
