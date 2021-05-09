@@ -19,7 +19,7 @@ public class Transition : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
-            SceneManager.LoadScene("Oficina4");
+            SceneManager.LoadScene("Gameplay");
     }
 
     private void LockCursor()

@@ -301,9 +301,6 @@ public class Interact : MonoBehaviour
                 }
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
     }
 
     IEnumerator WaitForSec()

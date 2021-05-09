@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Transition.unity
     guid: 35c17fdaea0047b438b3d65cb5fefb6d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Oficina4.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: 4a2844d08ef970a42866863ed30e2678
   m_configObjects: {}
