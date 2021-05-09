@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
+using System;
 
 public class MenuScript : MonoBehaviour
 {
     public GameObject menuPanel, menuUI, settingsUI;
     public AudioMixer audioMixer;
+    public SliderSettings brightnessSlider;
+    public PostProcessProfile profile;
+    public float brightnessValue;
 
+    //private ColorGrading colorGrading;
+
+    public void Start()
+    {
+        brightnessSlider.slider.onValueChanged.AddListener(delegate { Brightness(brightnessSlider.slider.value); });
+    }
     //Main Menu
     public void Update()
     {
@@ -50,11 +61,34 @@ public class MenuScript : MonoBehaviour
         audioMixer.SetFloat("volume", volume);
     }
 
+    public void SetBrightness(float brightness)
+    {
+        Debug.Log(brightness);
+        //colorGrading.postExposure.Override(brightness);
+    }
+
     public void ReturnMenu()
     {
         settingsUI.SetActive(false);
         menuUI.SetActive(true);
     }
+
+    void Brightness(float currentValue)
+    {
+        float finalValue;
+        finalValue = ConvertValue(brightnessSlider.slider.minValue, brightnessSlider.slider.maxValue, brightnessSlider.minSettingValue, brightnessSlider.maxSettingValue, currentValue);
+        profile.GetSetting<ColorGrading>().postExposure.Override(finalValue);
+        brightnessValue = currentValue;
+        //brightnessSlider.textSlider.text = Mathf.RoundToInt(currentValue).ToString();
+    }
+
+    private float ConvertValue(float minValue, float maxValue, float minSettingValue, float maxSettingValue, float currentValue)
+    {
+        float ratio = (maxSettingValue - minSettingValue) / (maxValue - minValue);
+        float returnValue = ((currentValue * ratio) - (minValue * ratio)) + minSettingValue;
+        return returnValue;
+    }
+
 
     //Cursor
     private void LockCursor()
@@ -62,7 +96,6 @@ public class MenuScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    //testes
     private void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
