@@ -10,6 +10,7 @@ public class Interact : MonoBehaviour
     public GameObject uiObject2;
     public GameObject uiObject3;
     public GameObject uiObject4;
+    public GameObject glassIcon, xGlassIcon;
     public GameObject text;
     public GameObject text2;
     public GameObject text3;
@@ -152,6 +153,7 @@ public class Interact : MonoBehaviour
                         isCarryingWater = true;
                         Debug.Log("PEGUEI A AGUA");
                         uiObject2.SetActive(true);
+                        glassIcon.SetActive(true);
                         StartCoroutine("WaitForSec");
                         trigger2.SetActive(true);
                     }
@@ -169,6 +171,8 @@ public class Interact : MonoBehaviour
                         FireScript fireParticles = hit.collider.transform.GetComponent<FireScript>();
                         fireParticles.DestroyFire();
                         Debug.Log("APAGUEI O FOGO");
+                        glassIcon.SetActive(false);
+                        xGlassIcon.SetActive(true);
                         fireplaceKey.SetActive(true);
                         isCarryingWater = false;
                     }
@@ -277,6 +281,7 @@ public class Interact : MonoBehaviour
                     Inventory.soundPuzzleObjects[hit.collider.GetComponent<SoundPuzzleScript>().index] = true;
 
                     SoundPuzzleScript soundPuzzle = hit.collider.transform.GetComponent<SoundPuzzleScript>();
+                    soundPuzzle.ActivateIcon();
                     soundPuzzle.AddIndex();
                     soundPuzzle.DestroyObject();
                     uiObject4.SetActive(true);

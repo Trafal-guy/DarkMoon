@@ -6,6 +6,7 @@ public class NoiseEmitterScript : MonoBehaviour
 {
     public int index;
     public Renderer soundObject;
+    public GameObject oldIcon, newIcon;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,7 @@ public class NoiseEmitterScript : MonoBehaviour
     public void ActivateObject()
     {
         soundObject.enabled = true;
+        oldIcon.SetActive(false);
+        newIcon.SetActive(true);
     }
 }
