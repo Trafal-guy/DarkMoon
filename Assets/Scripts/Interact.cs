@@ -249,8 +249,12 @@ public class Interact : MonoBehaviour
                     }
                     else
                     {
-                        doorScript.ChangeDoorState();
+                        doorScript.PuzzleDoor();
+                        pm.SetPlayerSpeed(0);
+                        StartCoroutine(WrongDoorEvent());
                         FindObjectOfType<AudioManager>().Play("OpenDoor");
+                        FindObjectOfType<AudioManager>().Play("Right");
+                        doorScript.ChangeGroup();
                     }
 
                     //player.ChangeCameraStateTrue();
@@ -266,10 +270,11 @@ public class Interact : MonoBehaviour
                     }
                     else
                     {
-                        doorScript.ChangeDoorState();
+                        doorScript.PuzzleDoor();
                         pm.SetPlayerSpeed(0);
                         StartCoroutine(WrongDoorEvent());
                         FindObjectOfType<AudioManager>().Play("OpenDoor");
+                        FindObjectOfType<AudioManager>().Play("Wrong");
                         //pm.SetPlayerSpeed(0);
                     }
 
@@ -285,6 +290,7 @@ public class Interact : MonoBehaviour
                     soundPuzzle.AddIndex();
                     soundPuzzle.DestroyObject();
                     uiObject4.SetActive(true);
+                    FindObjectOfType<AudioManager>().Play("GetKey");
                     StartCoroutine("WaitForSec");
                    // soundEmitter++;
                 }
@@ -302,6 +308,7 @@ public class Interact : MonoBehaviour
                         soundEmitter++;
                         noiseEmitterScript.ActivateObject();
                         print(soundEmitter);
+                        FindObjectOfType<AudioManager>().Play("Right");
                     }
                 }
             }
@@ -328,6 +335,7 @@ public class Interact : MonoBehaviour
         yield return new WaitForSeconds(1);
         pm.SetPlayerSpeed(5);
     }
+
 
     private void OnTriggerEnter(Collider collision)
     {

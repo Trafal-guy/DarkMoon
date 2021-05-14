@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
+public class DoorScript : RightDoor
 {
     public bool open = false;
     [SerializeField] private float doorOpenAngle;
@@ -20,6 +20,18 @@ public class DoorScript : MonoBehaviour
         open = !open;
     }
 
+    public void PuzzleDoor()
+    {
+        ChangeDoorState();
+        StartCoroutine(WaitForSec());
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+
     private void Update()
     {
         if (open)
@@ -34,5 +46,11 @@ public class DoorScript : MonoBehaviour
             transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation2, smooth * Time.deltaTime);
             //FindObjectOfType<AudioManager>().Play("OpenDoor");
         }
+    }
+
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(2);
+        ChangeDoorState();
     }
 }

@@ -23,15 +23,17 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController charController;
     [SerializeField] private GameObject ghost, ghost2, ghost3;
-    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4;
+    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4, corridorTrigger1, corridorTrigger2;
     [SerializeField] private PlayerCamera camera;
-    [SerializeField] private GameObject chairs, diningTable, modernTable;
+    [SerializeField] private GameObject chairs, diningTable, modernTable, door;
+    [SerializeField] private DoorScript doorScript;
 
 
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
         originalHeight = charController.height;
+        //doorScript = GetComponent<DoorScript>();
     }
 
     private void Update()
@@ -152,6 +154,26 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.name == "WinConditionTrigger")
             SceneManager.LoadScene("Menu");
+
+        if(collision.gameObject.name == "CorridorTrigger1" || collision.gameObject.name == "CorridorTrigger2")
+        {
+            if(doorScript.open == true)
+            {
+                doorScript.ChangeDoorState();
+                FindObjectOfType<AudioManager>().Play("Slam");
+                StartCoroutine(LockDoor());
+                StartCoroutine(DestroyDoor());
+            }
+            else
+            {
+                StartCoroutine(LockDoor());
+                StartCoroutine(DestroyDoor());
+            }
+
+            corridorTrigger1.SetActive(false);
+            corridorTrigger2.SetActive(false);
+
+        }
     }
 
     IEnumerator JumpscareTimer()
@@ -160,4 +182,16 @@ public class PlayerMovement : MonoBehaviour
         camera.ChangeCameraStateFalse();
     }
 
+    IEnumerator LockDoor()
+    {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("Lock");
+    }
+
+    IEnumerator DestroyDoor()
+    {
+        yield return new WaitForSeconds(1);
+        doorScript.Destroy();
+        door.SetActive(true);
+    }
 }
