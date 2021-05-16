@@ -16,7 +16,7 @@ public class ScriptTesteImagemController : MonoBehaviour
     public int valorFinal;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         valorFinal = 0;
         variables.Add(1); variables.Add(2); variables.Add(3); variables.Add(4); variables.Add(5); variables.Add(6);

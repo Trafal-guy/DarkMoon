@@ -35181,7 +35181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -49317,6 +49317,7 @@ MonoBehaviour:
   valor: 0
   ativo: 0
   anim: {fileID: 0}
+  isDone: 0
 --- !u!65 &987812245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49346,6 +49347,7 @@ MonoBehaviour:
   valor: 0
   ativo: 0
   anim: {fileID: 0}
+  isDone: 0
 --- !u!65 &987812247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49375,6 +49377,7 @@ MonoBehaviour:
   valor: 0
   ativo: 0
   anim: {fileID: 0}
+  isDone: 0
 --- !u!65 &987812249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49404,6 +49407,7 @@ MonoBehaviour:
   valor: 0
   ativo: 0
   anim: {fileID: 0}
+  isDone: 0
 --- !u!65 &987812251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49433,6 +49437,7 @@ MonoBehaviour:
   valor: 0
   ativo: 0
   anim: {fileID: 0}
+  isDone: 0
 --- !u!65 &987812253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49462,6 +49467,7 @@ MonoBehaviour:
   valor: 0
   ativo: 0
   anim: {fileID: 0}
+  isDone: 0
 --- !u!95 &987812273
 Animator:
   serializedVersion: 3
@@ -93050,7 +93056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1934452026
 Light:
   m_ObjectHideFlags: 0
@@ -111688,6 +111694,7 @@ MonoBehaviour:
   panel5: {fileID: 169485877}
   panel6: {fileID: 1519508426}
   valorFinal: 0
+  isReady: 0
 --- !u!4 &6062221751948437314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6062221750773940112, guid: 2d96009fafc3de2449ea9c430032db1b,
