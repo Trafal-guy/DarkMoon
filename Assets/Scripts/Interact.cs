@@ -13,7 +13,7 @@ public class Interact : MonoBehaviour
     public GameObject glassIcon, xGlassIcon;
     public GameObject text;
     public GameObject text2;
-    public GameObject text3;
+    public GameObject text3, finalDoorText;
     public bool isCarryingWater = false;
     public bool waterIsWorking = false;
     private bool textIsOnScreen = false;
@@ -37,6 +37,7 @@ public class Interact : MonoBehaviour
     public GameObject character;
     private PlayerMovement pm;
     public GameObject spawner;
+    public ScriptTesteImagemController imagePuzzle;
     //fim testes
     
     // Start is called before the first frame update
@@ -74,7 +75,7 @@ public class Interact : MonoBehaviour
     void Update()
     {
         //numberOfKeys.text = keys.ToString();
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
@@ -110,13 +111,17 @@ public class Interact : MonoBehaviour
                     if (doorScript == null)
                         return;
 
-                    if (Inventory.keys[doorScript.index] == true && soundEmitter >=4)
+                    if (Inventory.keys[doorScript.index] == true && soundEmitter >= 4 && imagePuzzle.valorFinal == 5)
                     {
                         doorScript.ChangeDoorState();
                         FindObjectOfType<AudioManager>().Play("OpenDoor");
                     }
                     else
+                    {
                         FindObjectOfType<AudioManager>().Play("LockedDoor");
+                        finalDoorText.SetActive(true);
+                        StartCoroutine(WaitForSec());
+                    }
 
                     Debug.Log("Colidi");
                     //player.ChangeCameraStateTrue();
@@ -325,6 +330,7 @@ public class Interact : MonoBehaviour
         text.SetActive(false);
         text2.SetActive(false);
         text3.SetActive(false);
+        finalDoorText.SetActive(false);
         //player.ChangeCameraStateFalse();
     }
 
@@ -332,6 +338,7 @@ public class Interact : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         character.transform.position = spawner.transform.position;
+        FindObjectOfType<AudioManager>().Play("Slam");
         yield return new WaitForSeconds(1);
         pm.SetPlayerSpeed(5);
     }

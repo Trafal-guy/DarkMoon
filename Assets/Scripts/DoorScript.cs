@@ -7,7 +7,9 @@ public class DoorScript : RightDoor
     public bool open = false;
     [SerializeField] private float doorOpenAngle;
     [SerializeField] private float doorClosedAngle;
-    [SerializeField] private float smooth;
+    [SerializeField] private float openingSpeed;
+    [SerializeField] private float closingSpeed;
+
     public int index;
 
     private void Start()
@@ -37,13 +39,13 @@ public class DoorScript : RightDoor
         if (open)
         {
             Quaternion targetRotation = Quaternion.Euler(0, doorOpenAngle, 0);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smooth * Time.deltaTime);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, openingSpeed * Time.deltaTime);
             //FindObjectOfType<AudioManager>().Play("OpenDoor");
         }
         else
         {
             Quaternion targetRotation2 = Quaternion.Euler(0, doorClosedAngle, 0);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation2, smooth * Time.deltaTime);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation2, closingSpeed * Time.deltaTime);
             //FindObjectOfType<AudioManager>().Play("OpenDoor");
         }
     }
