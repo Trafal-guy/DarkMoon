@@ -98,7 +98,7 @@ public class Interact : MonoBehaviour
                     else
                         FindObjectOfType<AudioManager>().Play("LockedDoor");
 
-                    Debug.Log("Colidi");
+                    //Debug.Log("Colidi");
                     //player.ChangeCameraStateTrue();
                    
 
@@ -275,12 +275,13 @@ public class Interact : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log(pm.transform.position);
                         doorScript.PuzzleDoor();
-                        pm.SetPlayerSpeed(0);
+                        //pm.SetPlayerSpeed(0);
                         StartCoroutine(WrongDoorEvent());
                         FindObjectOfType<AudioManager>().Play("OpenDoor");
                         FindObjectOfType<AudioManager>().Play("Wrong");
-                        //pm.SetPlayerSpeed(0);
+                        //pm.SetPlayerSpeed(5);
                     }
 
                     //player.ChangeCameraStateTrue();
@@ -336,11 +337,14 @@ public class Interact : MonoBehaviour
 
     IEnumerator WrongDoorEvent()
     {
+        print("wrongDoorEvent");
+        pm.SetPlayerSpeed(0);
         yield return new WaitForSeconds(2);
         character.transform.position = spawner.transform.position;
         FindObjectOfType<AudioManager>().Play("Slam");
         yield return new WaitForSeconds(1);
         pm.SetPlayerSpeed(5);
+        Debug.Log(pm.transform.position);
     }
 
 
