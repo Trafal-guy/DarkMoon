@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private KeyCode crouchKey = KeyCode.C;
     private bool isCrouching = false;
+    public bool canMove = true;
     private float originalHeight;
     [SerializeField] private float crouchHeight = 0.5f;
 
@@ -38,12 +39,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        CharacterMovement();
+        if (canMove)
+        {
+            CharacterMovement();
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
-            FindObjectOfType<AudioManager>().Play("Walk");
-        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
-            FindObjectOfType<AudioManager>().Stop("Walk");
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+                FindObjectOfType<AudioManager>().Play("Walk");
+            else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+                FindObjectOfType<AudioManager>().Stop("Walk");
+        }
     }
 
     private void CharacterMovement()

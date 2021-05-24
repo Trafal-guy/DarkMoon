@@ -255,7 +255,7 @@ public class Interact : MonoBehaviour
                     else
                     {
                         doorScript.PuzzleDoor();
-                        pm.SetPlayerSpeed(0);
+                        pm.canMove = false;
                         StartCoroutine(WrongDoorEvent());
                         FindObjectOfType<AudioManager>().Play("OpenDoor");
                         FindObjectOfType<AudioManager>().Play("Right");
@@ -277,7 +277,7 @@ public class Interact : MonoBehaviour
                     {
                         Debug.Log(pm.transform.position);
                         doorScript.PuzzleDoor();
-                        //pm.SetPlayerSpeed(0);
+                        pm.canMove = false;
                         StartCoroutine(WrongDoorEvent());
                         FindObjectOfType<AudioManager>().Play("OpenDoor");
                         FindObjectOfType<AudioManager>().Play("Wrong");
@@ -338,12 +338,11 @@ public class Interact : MonoBehaviour
     IEnumerator WrongDoorEvent()
     {
         print("wrongDoorEvent");
-        pm.SetPlayerSpeed(0);
         yield return new WaitForSeconds(2);
         character.transform.position = spawner.transform.position;
         FindObjectOfType<AudioManager>().Play("Slam");
         yield return new WaitForSeconds(1);
-        pm.SetPlayerSpeed(5);
+        pm.canMove = true;
         Debug.Log(pm.transform.position);
     }
 

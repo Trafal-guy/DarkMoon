@@ -32645,7 +32645,7 @@ MonoBehaviour:
   doorClosedAngle: 180
   openingSpeed: 2
   closingSpeed: 2
-  index: 1
+  index: 0
 --- !u!4 &737633777
 Transform:
   m_ObjectHideFlags: 0
@@ -37075,7 +37075,7 @@ MonoBehaviour:
   doorClosedAngle: 270
   openingSpeed: 2
   closingSpeed: 6
-  index: 3
+  index: 0
 --- !u!4 &969138383
 Transform:
   m_ObjectHideFlags: 0
@@ -82718,7 +82718,7 @@ MonoBehaviour:
   doorClosedAngle: 0
   openingSpeed: 2
   closingSpeed: 2
-  index: 1
+  index: 0
 --- !u!4 &1715054028
 Transform:
   m_ObjectHideFlags: 0
@@ -88950,7 +88950,7 @@ MonoBehaviour:
   doorClosedAngle: 270
   openingSpeed: 2
   closingSpeed: 2
-  index: 1
+  index: 0
 --- !u!4 &1793052587
 Transform:
   m_ObjectHideFlags: 0
@@ -98375,7 +98375,7 @@ MonoBehaviour:
   doorClosedAngle: 0
   openingSpeed: 2
   closingSpeed: 2
-  index: 1
+  index: 0
 --- !u!4 &1974559682
 Transform:
   m_ObjectHideFlags: 0
