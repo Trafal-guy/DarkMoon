@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RightDoor : MonoBehaviour
 {
-    public GameObject currentGroup, newGroup;
+    public GameObject currentGroup, newGroup, currentPainting, newPainting;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,8 @@ public class RightDoor : MonoBehaviour
 
     public void ChangeGroup()
     {
+        currentPainting.SetActive(false);
+        newPainting.SetActive(true);
         StartCoroutine(Delay());
     }
 

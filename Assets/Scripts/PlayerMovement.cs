@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController charController;
     [SerializeField] private GameObject ghost, ghost2, ghost3;
-    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4, corridorTrigger1, corridorTrigger2;
+    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4, corridorTrigger1, corridorTrigger2, spotlightsTrigger;
     [SerializeField] private PlayerCamera camera;
-    [SerializeField] private GameObject chairs, diningTable, modernTable, door;
+    [SerializeField] private GameObject chairs, diningTable, modernTable, door, spotlights;
     [SerializeField] private DoorScript doorScript;
+    [SerializeField] private ScriptTesteImagemController stic;
 
 
     private void Awake()
@@ -176,7 +177,15 @@ public class PlayerMovement : MonoBehaviour
 
             corridorTrigger1.SetActive(false);
             corridorTrigger2.SetActive(false);
+            spotlightsTrigger.SetActive(true);
 
+        }
+
+        if(collision.gameObject.name == "SpotlightsTrigger" && stic.valorFinal != 5)
+        {
+            spotlights.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("BigSwitch");
+            Destroy(spotlightsTrigger);
         }
     }
 

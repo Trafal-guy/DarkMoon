@@ -21,9 +21,10 @@ public class Interact : MonoBehaviour
     public GameObject waterTankKey;
     public GameObject secretCompartmentKey;
     public GameObject normalWater;
-    public GameObject fallingWater;
+    public GameObject fallingWater, kitchenWater;
     public GameObject kitchenTable;
     public GameObject normalTable;
+    public GameObject painting;
     public PlayerCamera player;
     public GameObject ghost, ghost2, ghost3;
     public GameObject trigger, trigger2, trigger3;
@@ -197,6 +198,7 @@ public class Interact : MonoBehaviour
                     StartCoroutine("WaitForSec");
                     kitchenTable.SetActive(true);
                     normalTable.SetActive(false);
+                    kitchenWater.SetActive(true);
                     //PoisonedWaterScript blackWater = hit.collider.transform.GetComponent<PoisonedWaterScript>();
                     //blackWater.DestroyWater();
                     //Debug.Log("RIP AGUA DA MORTE");
@@ -317,7 +319,48 @@ public class Interact : MonoBehaviour
                         FindObjectOfType<AudioManager>().Play("Right");
                     }
                 }
+                // =======================Xylophone========================
+                
+                if(hit.collider.name == "XyloA")
+                {
+                    FindObjectOfType<AudioManager>().Play("XyloA");
+                }
+
+                if (hit.collider.name == "XyloB")
+                {
+                    FindObjectOfType<AudioManager>().Play("XyloB");
+                }
+
+                if (hit.collider.name == "XyloC")
+                {
+                    FindObjectOfType<AudioManager>().Play("XyloC");
+                }
+
+                if (hit.collider.name == "XyloD")
+                {
+                    FindObjectOfType<AudioManager>().Play("XyloD");
+                }
+
+                if (hit.collider.name == "XyloE")
+                {
+                    FindObjectOfType<AudioManager>().Play("XyloE");
+                }
+
+                if (hit.collider.name == "XyloF")
+                {
+                    FindObjectOfType<AudioManager>().Play("XyloF");
+                }
+
+                if (hit.collider.name == "XyloG")
+                {
+                    FindObjectOfType<AudioManager>().Play("XyloG");
+                }
             }
+        }
+
+        if(soundEmitter == 4)
+        {
+            painting.SetActive(true);
         }
     }
 
@@ -340,6 +383,7 @@ public class Interact : MonoBehaviour
         print("wrongDoorEvent");
         yield return new WaitForSeconds(2);
         character.transform.position = spawner.transform.position;
+        character.transform.rotation = spawner.transform.rotation;
         FindObjectOfType<AudioManager>().Play("Slam");
         yield return new WaitForSeconds(1);
         pm.canMove = true;
