@@ -26,6 +26,7 @@ TagManager:
   - Interruptor2
   - Interruptor3
   - Interruptor4
+  - Xylo
   layers:
   - Default
   - TransparentFX

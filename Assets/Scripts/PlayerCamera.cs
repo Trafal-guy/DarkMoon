@@ -34,7 +34,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void Update()
     {
-        if (isLocked == false)
+        if (isLocked == false) 
             CameraRotation();
 
         Ray ray = new Ray(transform.position, transform.forward);
@@ -43,16 +43,17 @@ public class PlayerCamera : MonoBehaviour
         //testes
         if (Physics.Raycast(ray, out hit, length))
         {
-            //if (hit.collider.CompareTag("Key"))
-            //{
+            if (hit.collider.CompareTag("Key") || hit.collider.CompareTag("Xylo"))
+            {
+                print("xylo");
                 //UnlockCursor();
-                //Cursor.visible = true;
-                //print("cubunda");
-           // }
-            //else
-            //{
-                //Cursor.visible = false;
-            //}
+                Cursor.visible = true;
+            }
+            else
+            {
+                //LockCursor();
+                Cursor.visible = false;
+            }
         }
         //fim testes
     }
