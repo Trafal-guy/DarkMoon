@@ -125,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.name == "BathroomJumpscareTrigger")
         {
             ghost.SetActive(true);
+            canMove = false;
             FindObjectOfType<AudioManager>().Play("Scream");
             Destroy(trigger);
             Debug.Log("JUMPSCARE");
@@ -193,6 +194,7 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         camera.ChangeCameraStateFalse();
+        canMove = true;
     }
 
     IEnumerator LockDoor()

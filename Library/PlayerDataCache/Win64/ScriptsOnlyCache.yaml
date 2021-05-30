@@ -8,15 +8,12 @@ ScriptsOnlyBuild:
     - DoorScript
     - Enemy
     - FireScript
-    - FloorScript
     - Hud
     - Interact
     - Inventory
-    - JumpScare
     - KeyScript
     - MenuScript
     - NoiseEmitterScript
-    - PauseMenu
     - PlayerCamera
     - PlayerMovement
     - PoisonedWaterScript
@@ -102,83 +99,77 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11188}
-    - Class: 114
-      Script: {instanceID: 11200}
-    - Class: 114
-      Script: {instanceID: 11202}
-    - Class: 114
-      Script: {instanceID: 11216}
-    - Class: 114
-      Script: {instanceID: 11272}
+      Script: {instanceID: 11270}
     - Class: 114
       Script: {instanceID: 11282}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11284}
     - Class: 114
-      Script: {instanceID: 11356}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11364}
     - Class: 114
-      Script: {instanceID: 11508}
+      Script: {instanceID: 11410}
     - Class: 114
-      Script: {instanceID: 11564}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11698}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 11718}
+      Script: {instanceID: 11646}
     - Class: 114
-      Script: {instanceID: 11790}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11798}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11800}
     - Class: 114
-      Script: {instanceID: 11864}
+      Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 11996}
+      Script: {instanceID: 11898}
     - Class: 114
-      Script: {instanceID: 12006}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 12034}
+      Script: {instanceID: 11970}
     - Class: 114
-      Script: {instanceID: 12058}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12074}
+      Script: {instanceID: 12088}
     - Class: 114
-      Script: {instanceID: 12178}
+      Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12190}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12350}
+      Script: {instanceID: 12156}
     - Class: 114
-      Script: {instanceID: 12352}
+      Script: {instanceID: 12260}
     - Class: 114
-      Script: {instanceID: 12354}
+      Script: {instanceID: 12272}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 12432}
     - Class: 114
-      Script: {instanceID: 12538}
+      Script: {instanceID: 12436}
     - Class: 114
-      Script: {instanceID: 12554}
+      Script: {instanceID: 12564}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 12864}
+      Script: {instanceID: 12636}
     - Class: 114
-      Script: {instanceID: 12872}
+      Script: {instanceID: 12706}
     - Class: 114
-      Script: {instanceID: 12980}
+      Script: {instanceID: 12950}
     - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 12958}
     - Class: 114
-      Script: {instanceID: 13010}
+      Script: {instanceID: 13068}
     - Class: 114
-      Script: {instanceID: 13018}
+      Script: {instanceID: 13096}
+    - Class: 114
+      Script: {instanceID: 13104}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -235,23 +226,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11202}
+      Script: {instanceID: 11284}
     - Class: 114
-      Script: {instanceID: 11356}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11790}
+      Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 11810}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 12178}
+      Script: {instanceID: 12260}
     - Class: 114
-      Script: {instanceID: 12190}
+      Script: {instanceID: 12272}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12706}
     - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 13068}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -286,19 +277,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11202}
+      Script: {instanceID: 11284}
     - Class: 114
-      Script: {instanceID: 11356}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11790}
+      Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12706}
     - Class: 114
-      Script: {instanceID: 12726}
+      Script: {instanceID: 12812}
     - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 13068}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -570,7 +561,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: c17f92f6e629aaacc845e14a2e484448
+      Hash: 7cbed68322381444675b729e77668047
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DoorScript
@@ -660,7 +651,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: bbeac9e307aaaac1b40d040127a9166a
+      Hash: 7bd592877a2c03452634040481753552
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -672,7 +663,7 @@ ScriptsOnlyBuild:
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
-      Hash: f450bd92c660880e07a6cb4e4f93cd6d
+      Hash: aa9accb35fd365e1299ba2142c29c34a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SoundPuzzleScript
@@ -702,7 +693,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 02e11bf6c8a2541497b0fa26e5934317
+      Hash: 2f68e1d2fa99969fd6c67fdca0f4e0eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Interact
@@ -714,7 +705,7 @@ ScriptsOnlyBuild:
     className: Enemy
   - hash:
       serializedVersion: 2
-      Hash: 430ff55fc18bbb2e88b96a65a0480893
+      Hash: 2cf686442ebd6be1806479d68c260414
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NoiseEmitterScript
@@ -918,10 +909,22 @@ ScriptsOnlyBuild:
     className: ApplicationQuit
   - hash:
       serializedVersion: 2
+      Hash: d74dfd3788fe4351bb00d4fe4941d1f9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RightDoor
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: ccf76a606cc23b6bfd58555c4eec2cd6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptTesteTeleporte
   - hash:
       serializedVersion: 2
       Hash: d404bb084a6eba8ef6795c39eb86998b
@@ -1018,12 +1021,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Dropdown
-  - hash:
-      serializedVersion: 2
-      Hash: 4d62a887a9d900acd13e3a9c447dba84
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PauseMenu
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b

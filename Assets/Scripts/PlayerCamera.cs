@@ -43,12 +43,16 @@ public class PlayerCamera : MonoBehaviour
         //testes
         if (Physics.Raycast(ray, out hit, length))
         {
-            if (hit.collider.CompareTag("Key"))
-            {
+            //if (hit.collider.CompareTag("Key"))
+            //{
                 //UnlockCursor();
-                Cursor.visible = true;
+                //Cursor.visible = true;
                 //print("cubunda");
-            }
+           // }
+            //else
+            //{
+                //Cursor.visible = false;
+            //}
         }
         //fim testes
     }

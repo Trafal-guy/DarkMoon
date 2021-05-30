@@ -28,6 +28,7 @@ public class MenuScript : MonoBehaviour
             menuPanel.SetActive(true);
             Time.timeScale = 0f;
             UnlockCursor();
+            Cursor.visible = true;
         }
     }
     public void Resume()
@@ -35,6 +36,7 @@ public class MenuScript : MonoBehaviour
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
         LockCursor();
+        Cursor.visible = false;
     }
 
     public void Settings()

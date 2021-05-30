@@ -19,13 +19,13 @@ public class RightDoor : MonoBehaviour
 
     public void ChangeGroup()
     {
-        currentPainting.SetActive(false);
-        newPainting.SetActive(true);
         StartCoroutine(Delay());
     }
 
     IEnumerator Delay()
     {
+        currentPainting.SetActive(false);
+        newPainting.SetActive(true);
         yield return new WaitForSeconds(3);
         newGroup.SetActive(true);
         currentGroup.SetActive(false);
