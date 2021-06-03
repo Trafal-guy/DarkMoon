@@ -14,6 +14,7 @@ public class ScriptTesteImagemController : MonoBehaviour
     public GameObject panel5;
     public GameObject panel6;
     public int valorFinal;
+    public BoxCollider i1, i2, i3, i4, i5, i6;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,6 +36,13 @@ public class ScriptTesteImagemController : MonoBehaviour
         {
             print("imagem correta");
             valorFinal += 1;
+            FindObjectOfType<AudioManager>().Play("Right");
+            i1.enabled = false;
+            i2.enabled = false;
+            i3.enabled = false;
+            i4.enabled = false;
+            i5.enabled = false;
+            i6.enabled = false;
         }
     }
 }

@@ -43,9 +43,12 @@ public class PlayerCamera : MonoBehaviour
         //testes
         if (Physics.Raycast(ray, out hit, length))
         {
-            if (hit.collider.CompareTag("Key") || hit.collider.CompareTag("Xylo"))
+            if (hit.collider.CompareTag("Key") || hit.collider.CompareTag("Xylo") || hit.collider.CompareTag("Door") 
+                || hit.collider.CompareTag("RightDoor") || hit.collider.CompareTag("WrongDoor") || hit.collider.CompareTag("Message") || hit.collider.CompareTag("FinalDoor")
+                || hit.collider.CompareTag("Fire") || hit.collider.CompareTag("Sink") || hit.collider.CompareTag("Regulator") || hit.collider.CompareTag("Text") || hit.collider.CompareTag("PoisonedWater")
+                || hit.collider.CompareTag("WrongNote") || hit.collider.CompareTag("RightNote") || hit.collider.CompareTag("SoundPuzzle"))
             {
-                print("xylo");
+                //print("xylo");
                 //UnlockCursor();
                 Cursor.visible = true;
             }

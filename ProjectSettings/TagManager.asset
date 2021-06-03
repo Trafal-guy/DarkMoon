@@ -27,6 +27,8 @@ TagManager:
   - Interruptor3
   - Interruptor4
   - Xylo
+  - RightNote
+  - WrongNote
   layers:
   - Default
   - TransparentFX

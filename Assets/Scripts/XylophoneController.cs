@@ -5,6 +5,7 @@ using UnityEngine;
 public class XylophoneController : MonoBehaviour
 {
     public int currentIndex = 0;
+    public GameObject np1, np2, np3, np4;
 
     // Start is called before the first frame update
     void Start()
@@ -20,4 +21,20 @@ public class XylophoneController : MonoBehaviour
             print("Xylophone Complete");
         }
     }
+
+    public void PuzzleComplete()
+    {
+        StartCoroutine(Complete());
+    }
+
+    IEnumerator Complete()
+    {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("Right");
+        np1.SetActive(true);
+        np2.SetActive(true);
+        np3.SetActive(true);
+        np4.SetActive(true);
+    }
+
 }

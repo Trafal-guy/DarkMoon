@@ -24,11 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController charController;
     [SerializeField] private GameObject ghost, ghost2, ghost3;
-    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4, corridorTrigger1, corridorTrigger2, spotlightsTrigger;
+    [SerializeField] private GameObject trigger, trigger1, trigger2, trigger3, trigger4, corridorTrigger1, corridorTrigger2, spotlightsTrigger, dropTrigger;
     [SerializeField] private PlayerCamera camera;
     [SerializeField] private GameObject chairs, diningTable, modernTable, door, spotlights;
     [SerializeField] private DoorScript doorScript;
     [SerializeField] private ScriptTesteImagemController stic;
+    [SerializeField] private Rigidbody rb1, rb2;
+    [SerializeField] private Rotate ro1, ro2;
 
 
     private void Awake()
@@ -43,11 +45,14 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             CharacterMovement();
+            //SetMovementSpeed();
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 FindObjectOfType<AudioManager>().Play("Walk");
-            else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+           else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
                 FindObjectOfType<AudioManager>().Stop("Walk");
+
+            
         }
     }
 
@@ -156,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
             chairs.SetActive(true);
             diningTable.SetActive(false);
             modernTable.SetActive(true);
+            dropTrigger.SetActive(true);
             Destroy(trigger4);
         }
         if (collision.gameObject.name == "WinConditionTrigger")
@@ -188,6 +194,16 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("BigSwitch");
             Destroy(spotlightsTrigger);
         }
+
+        if(collision.gameObject.name == "DropTrigger")
+        {
+            rb1.useGravity = true;
+            ro1.ySpeed = 0f;
+            rb2.useGravity = true;
+            ro2.ySpeed = 0f;
+            StartCoroutine(DropSound());
+            Destroy(dropTrigger);
+        }
     }
 
     IEnumerator JumpscareTimer()
@@ -208,5 +224,10 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1);
         doorScript.Destroy();
         door.SetActive(true);
+    }
+    IEnumerator DropSound()
+    {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("WoodImpact");
     }
 }
