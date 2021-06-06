@@ -16,7 +16,7 @@ public class Interact : MonoBehaviour
     public GameObject text3, finalDoorText;
     public bool isCarryingWater = false;
     public bool waterIsWorking = false;
-    private bool textIsOnScreen = false;
+    public bool textIsOnScreen = false;
     public GameObject fireplaceKey;
     public GameObject waterTankKey;
     public GameObject secretCompartmentKey;
@@ -105,7 +105,7 @@ public class Interact : MonoBehaviour
 
                 }
 
-                if (hit.collider.CompareTag("FinalDoor"))
+                else if (hit.collider.CompareTag("FinalDoor"))
                 {
                     DoorScript doorScript = hit.collider.transform.parent.GetComponent<DoorScript>();
 
@@ -120,8 +120,12 @@ public class Interact : MonoBehaviour
                     else
                     {
                         FindObjectOfType<AudioManager>().Play("LockedDoor");
-                        finalDoorText.SetActive(true);
-                        StartCoroutine(WaitForSec());
+                        if (!textIsOnScreen)
+                        {
+                            textIsOnScreen = true;
+                            finalDoorText.SetActive(true);
+                            StartCoroutine(WaitForSec());
+                        }
                     }
 
                     Debug.Log("Colidi");
@@ -129,11 +133,15 @@ public class Interact : MonoBehaviour
 
 
                 }
-                if (hit.collider.CompareTag("Key"))
+                else if (hit.collider.CompareTag("Key"))
                 {
                     Inventory.keys[hit.collider.GetComponent<KeyScript>().index] = true;
-                    uiObject.SetActive(true);
-                    StartCoroutine("WaitForSec");
+                    if (!textIsOnScreen)
+                    {
+                        textIsOnScreen = true;
+                        uiObject.SetActive(true);
+                        StartCoroutine("WaitForSec");
+                    }
                     //Debug.Log("ColidiCarai");
                     //Destroy(gameObject);
                     FindObjectOfType<AudioManager>().Play("GetKey");
@@ -145,32 +153,40 @@ public class Interact : MonoBehaviour
 
                 //Interactable intercactable = hit.collider.GetComponent<Interactable>();
 
-                if(hit.collider.CompareTag("AnimInteractable"))
+                else if(hit.collider.CompareTag("AnimInteractable"))
                 {
                     PlayAnimation animation = hit.collider.transform.GetComponent<PlayAnimation>();
                     animation.AnimPlay();
                     Debug.Log("TaFuncionando"); //Não ta funcionando ;-; T-T
                 }
 
-                if (hit.collider.CompareTag("Sink") && isCarryingWater == false)
+                else if (hit.collider.CompareTag("Sink") && isCarryingWater == false)
                 {
                     if (waterIsWorking)
                     {
                         isCarryingWater = true;
                         Debug.Log("PEGUEI A AGUA");
-                        uiObject2.SetActive(true);
+                        if (!textIsOnScreen)
+                        {
+                            textIsOnScreen = true;
+                            uiObject2.SetActive(true);
+                            StartCoroutine("WaitForSec");
+                        }
                         glassIcon.SetActive(true);
-                        StartCoroutine("WaitForSec");
                         trigger2.SetActive(true);
                     }
                     else
                     {
-                        uiObject3.SetActive(true);
-                        StartCoroutine("WaitForSec");
+                        if (!textIsOnScreen)
+                        {
+                            textIsOnScreen = true;
+                            uiObject3.SetActive(true);
+                            StartCoroutine("WaitForSec");
+                        }
                     }
                 }
 
-                if(hit.collider.CompareTag("Fire"))
+                else if(hit.collider.CompareTag("Fire"))
                 {
                     if (isCarryingWater == true)
                     {
@@ -185,17 +201,25 @@ public class Interact : MonoBehaviour
 
                     else
                     {
-                        text3.SetActive(true);
-                        StartCoroutine("WaitForSec");
+                        if (!textIsOnScreen)
+                        {
+                            textIsOnScreen = true;
+                            text3.SetActive(true);
+                            StartCoroutine("WaitForSec");
+                        }
                     }
                 }
 
-                if(hit.collider.CompareTag("Regulator") && waterIsWorking == false)
+                else if(hit.collider.CompareTag("Regulator") && waterIsWorking == false)
                 {
                     waterIsWorking = true;
                     Debug.Log("LIGUEI O REGISTRO");
-                    text.SetActive(true);
-                    StartCoroutine("WaitForSec");
+                    if (!textIsOnScreen)
+                    {
+                        textIsOnScreen = true;
+                        text.SetActive(true);
+                        StartCoroutine("WaitForSec");
+                    }
                     kitchenTable.SetActive(true);
                     normalTable.SetActive(false);
                     kitchenWater.SetActive(true);
@@ -207,7 +231,7 @@ public class Interact : MonoBehaviour
                     //fallingWater.SetActive(true);
                 }
 
-                if(hit.collider.CompareTag("PoisonedWater"))
+                else if(hit.collider.CompareTag("PoisonedWater"))
                 {
                     if(waterIsWorking)
                     {
@@ -221,24 +245,34 @@ public class Interact : MonoBehaviour
 
                     else
                     {
-                        text2.SetActive(true);
-                        StartCoroutine("WaitForSec");
+                        if (!textIsOnScreen)
+                        {
+                            textIsOnScreen = true;
+                            text2.SetActive(true);
+                            StartCoroutine("WaitForSec");
+                        }
                     }
 
                 }
 
-                if(hit.collider.CompareTag("MovableFloor"))
+                else if(hit.collider.CompareTag("MovableFloor"))
                 {
                     FloorScript floor = hit.collider.transform.GetComponent<FloorScript>();
                     floor.DestroyFloor();
                     //secretCompartmentKey.SetActive(true);
                 }
 
-                if(hit.collider.CompareTag("Text"))
+                else if(hit.collider.CompareTag("Text"))
                 {
                     PrintMessage text = hit.collider.transform.GetComponent<PrintMessage>();
-                    text.ShowText();
-                    text.TextOnScreen();
+
+                    if (!textIsOnScreen)
+                    {
+                        textIsOnScreen = true;
+                        text.ShowText();
+                        StartCoroutine(WaitForSec());
+                    }
+                    //text.TextOnScreen();
                 }
 
                // if (hit.collider.gameObject.name == "Boiler")
@@ -246,7 +280,7 @@ public class Interact : MonoBehaviour
                    // boiler.SetActive(false);
                 //}
 
-                if (hit.collider.CompareTag("RightDoor"))
+                else if (hit.collider.CompareTag("RightDoor"))
                 {
                     DoorScript doorScript = hit.collider.transform.parent.GetComponent<DoorScript>();
 
@@ -267,7 +301,7 @@ public class Interact : MonoBehaviour
                     //player.ChangeCameraStateTrue();
                 }
 
-                if (hit.collider.CompareTag("WrongDoor"))
+                else if (hit.collider.CompareTag("WrongDoor"))
                 {
                     DoorScript doorScript = hit.collider.transform.parent.GetComponent<DoorScript>();
 
@@ -289,7 +323,7 @@ public class Interact : MonoBehaviour
                     //player.ChangeCameraStateTrue();
                 }
 
-                if(hit.collider.CompareTag("SoundPuzzle"))
+                else if(hit.collider.CompareTag("SoundPuzzle"))
                 {
                     Inventory.soundPuzzleObjects[hit.collider.GetComponent<SoundPuzzleScript>().index] = true;
 
@@ -303,7 +337,7 @@ public class Interact : MonoBehaviour
                    // soundEmitter++;
                 }
 
-                if(hit.collider.CompareTag("NoiseEmitter"))
+                else if(hit.collider.CompareTag("NoiseEmitter"))
                 {
                     NoiseEmitterScript noiseEmitterScript = hit.collider.transform.GetComponent<NoiseEmitterScript>();
 
@@ -367,6 +401,7 @@ public class Interact : MonoBehaviour
     IEnumerator WaitForSec()
     {
         yield return new WaitForSeconds(2);
+        textIsOnScreen = false;
         uiObject.SetActive(false);
         uiObject2.SetActive(false);
         uiObject3.SetActive(false);

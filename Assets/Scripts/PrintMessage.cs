@@ -6,7 +6,7 @@ public class PrintMessage : MonoBehaviour
 {
     [SerializeField] private GameObject text;
     [SerializeField] private float time;
-    private bool onScreen = false;
+    public bool onScreen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,23 +15,15 @@ public class PrintMessage : MonoBehaviour
 
     public void ShowText()
     {
-        if (onScreen == false)
-        {
-            text.SetActive(true);
-            StartCoroutine("TextTime");
-        }
+        text.SetActive(true);
+        StartCoroutine(TextTime());
     }
 
     // Update is called once per frame
     IEnumerator TextTime()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(2);
         text.SetActive(false);
-        onScreen = false;
     }
 
-    public void TextOnScreen()
-    {
-        onScreen = true;
-    }
 }

@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode crouchKey = KeyCode.C;
     private bool isCrouching = false;
     public bool canMove = true;
+    public bool isMoving = false;
     private float originalHeight;
     [SerializeField] private float crouchHeight = 0.5f;
 
@@ -48,11 +49,32 @@ public class PlayerMovement : MonoBehaviour
             //SetMovementSpeed();
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
                 FindObjectOfType<AudioManager>().Play("Walk");
-           else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+                print("Entrou");
+            }
+            else if (Input.GetKeyUp(KeyCode.A) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
+            {
                 FindObjectOfType<AudioManager>().Stop("Walk");
+                print("Saiu");
+            }
+            else if (Input.GetKeyUp(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S))
+            {
+                FindObjectOfType<AudioManager>().Stop("Walk");
+                print("Saiu");
+            }
+            else if (Input.GetKeyUp(KeyCode.S) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            {
+                FindObjectOfType<AudioManager>().Stop("Walk");
+                print("Saiu");
+            }
+            else if (Input.GetKeyUp(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
+            {
+                FindObjectOfType<AudioManager>().Stop("Walk");
+                print("Saiu");
+            }
 
-            
+
         }
     }
 
