@@ -74,6 +74,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -405,7 +407,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: d2a625a6f69cac91f8142948fe92c4c2
+      Hash: 34eea56da4f056aa49d5d39231b2260d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PrintMessage
@@ -627,7 +629,7 @@ ScriptsOnlyBuild:
     className: XylophoneController
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: edc53ee6876419e2a34ad7341fa5692d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Rotate
@@ -663,7 +665,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 7bd592877a2c03452634040481753552
+      Hash: 52cf79fbca651c3f862d37425342a6e7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -705,7 +707,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 2f68e1d2fa99969fd6c67fdca0f4e0eb
+      Hash: e0bd730cb1748c46b65299ec4830171b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Interact

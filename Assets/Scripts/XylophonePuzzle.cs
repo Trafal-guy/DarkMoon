@@ -22,35 +22,6 @@ public class XylophonePuzzle : MonoBehaviour
 
     private void OnMouseDown()
     {
-       /* if (sceneCamera.GetComponent<XylophoneController>().currentIndex == 1 && name == "XyloA")
-        {
-            sceneCamera.GetComponent<XylophoneController>().currentIndex += 1;
-        }
-        if (sceneCamera.GetComponent<XylophoneController>().currentIndex == 2 && name == "XyloE")
-        {
-            sceneCamera.GetComponent<XylophoneController>().currentIndex += 1;
-        }
-        if (sceneCamera.GetComponent<XylophoneController>().currentIndex == 3 && name == "XyloC")
-        {
-            sceneCamera.GetComponent<XylophoneController>().currentIndex += 1;
-        }
-        if (sceneCamera.GetComponent<XylophoneController>().currentIndex == 4 && name == "XyloD")
-        {
-            sceneCamera.GetComponent<XylophoneController>().currentIndex += 1;
-        }
-        if (sceneCamera.GetComponent<XylophoneController>().currentIndex == 5 && name == "XyloB")
-        {
-            sceneCamera.GetComponent<XylophoneController>().currentIndex += 1;
-        }
-        if (sceneCamera.GetComponent<XylophoneController>().currentIndex == 6 && name == "XyloA")
-        {
-            sceneCamera.GetComponent<XylophoneController>().currentIndex += 1;
-        }
-        else
-        {
-            sceneCamera.GetComponent<XylophoneController>().currentIndex = 1;
-        }
-       */
 
         if(tag == "RightNote")
         {
