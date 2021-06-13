@@ -7,10 +7,10 @@ public class Start : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
-            Application.Quit();
-        if (Input.GetKey(KeyCode.Return))
-            SceneManager.LoadScene("Transition");
+       // if (Input.GetKey(KeyCode.Escape))
+           // Application.Quit();
+        //if (Input.GetKey(KeyCode.Return))
+           // SceneManager.LoadScene("Transition");
     }
 
     private void Awake()
@@ -22,6 +22,16 @@ public class Start : MonoBehaviour
     public void Iniciar()
     {
         SceneManager.LoadScene("Transition");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public void Controls()
+    {
+        SceneManager.LoadScene("Controls");
     }
 
 }
