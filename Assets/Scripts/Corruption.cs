@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Corruption : MonoBehaviour
 {
     private float levelOfCorruption = 0;
-    public GameObject flash;
+    public GameObject flash, ghostObjects;
+    public Renderer oldHouse, newHouse;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -17,14 +18,23 @@ public class Corruption : MonoBehaviour
     {
         if (levelOfCorruption >= 1200)
             SceneManager.LoadScene("Menu");
-        if(levelOfCorruption == 300)
+        if(levelOfCorruption == 240)
         {
             FindObjectOfType<AudioManager>().Play("CreepyWhispers");
         }
-        if(levelOfCorruption == 180)
+        if(levelOfCorruption == 120)
         {
             flash.SetActive(true);
             StartCoroutine(lightning());
+        }
+        if(levelOfCorruption == 180)
+        {
+            newHouse.enabled = false;
+            oldHouse.enabled = true;
+        }
+        if(levelOfCorruption == 300)
+        {
+            ghostObjects.SetActive(true);
         }
     }
 

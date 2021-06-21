@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.Water.Water
     Assembly-CSharp.dll:
     - AudioManager
+    - ControlsMenu
     - Corruption
     - DoorScript
     - Enemy
@@ -55,6 +56,63 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/Controls.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11288}
+    - Class: 114
+      Script: {instanceID: 11442}
+    - Class: 114
+      Script: {instanceID: 11482}
+    - Class: 114
+      Script: {instanceID: 11876}
+    - Class: 114
+      Script: {instanceID: 11898}
+    - Class: 114
+      Script: {instanceID: 12266}
+    - Class: 114
+      Script: {instanceID: 12278}
+    - Class: 114
+      Script: {instanceID: 12624}
+    - Class: 114
+      Script: {instanceID: 12714}
+    - Class: 114
+      Script: {instanceID: 13078}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Gameplay.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -103,81 +161,81 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11270}
+      Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11282}
+      Script: {instanceID: 11286}
     - Class: 114
-      Script: {instanceID: 11284}
+      Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11302}
     - Class: 114
-      Script: {instanceID: 11364}
+      Script: {instanceID: 11368}
     - Class: 114
-      Script: {instanceID: 11410}
+      Script: {instanceID: 11414}
     - Class: 114
-      Script: {instanceID: 11438}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11594}
     - Class: 114
-      Script: {instanceID: 11646}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11780}
+      Script: {instanceID: 11784}
     - Class: 114
-      Script: {instanceID: 11798}
+      Script: {instanceID: 11802}
     - Class: 114
-      Script: {instanceID: 11800}
+      Script: {instanceID: 11804}
     - Class: 114
-      Script: {instanceID: 11872}
-    - Class: 114
-      Script: {instanceID: 11882}
+      Script: {instanceID: 11876}
     - Class: 114
       Script: {instanceID: 11886}
     - Class: 114
-      Script: {instanceID: 11900}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 11948}
+      Script: {instanceID: 11904}
     - Class: 114
-      Script: {instanceID: 11972}
+      Script: {instanceID: 11952}
     - Class: 114
-      Script: {instanceID: 12080}
+      Script: {instanceID: 11976}
     - Class: 114
-      Script: {instanceID: 12090}
+      Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 12118}
+      Script: {instanceID: 12094}
     - Class: 114
-      Script: {instanceID: 12142}
+      Script: {instanceID: 12122}
     - Class: 114
-      Script: {instanceID: 12158}
+      Script: {instanceID: 12146}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12162}
     - Class: 114
-      Script: {instanceID: 12274}
+      Script: {instanceID: 12266}
     - Class: 114
-      Script: {instanceID: 12434}
+      Script: {instanceID: 12278}
     - Class: 114
       Script: {instanceID: 12438}
     - Class: 114
-      Script: {instanceID: 12566}
+      Script: {instanceID: 12442}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12638}
+      Script: {instanceID: 12628}
     - Class: 114
-      Script: {instanceID: 12708}
+      Script: {instanceID: 12644}
     - Class: 114
-      Script: {instanceID: 12810}
+      Script: {instanceID: 12714}
     - Class: 114
-      Script: {instanceID: 12954}
+      Script: {instanceID: 12816}
     - Class: 114
-      Script: {instanceID: 12962}
+      Script: {instanceID: 12960}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 12968}
     - Class: 114
-      Script: {instanceID: 13100}
+      Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13108}
+      Script: {instanceID: 13106}
+    - Class: 114
+      Script: {instanceID: 13114}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -234,23 +292,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11284}
+      Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 11438}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11876}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11898}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12266}
     - Class: 114
-      Script: {instanceID: 12274}
+      Script: {instanceID: 12278}
     - Class: 114
-      Script: {instanceID: 12708}
+      Script: {instanceID: 12714}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 13078}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -285,19 +343,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11284}
+      Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 11438}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11876}
     - Class: 114
-      Script: {instanceID: 12708}
+      Script: {instanceID: 12714}
     - Class: 114
-      Script: {instanceID: 12816}
+      Script: {instanceID: 12822}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 13078}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -887,6 +945,12 @@ ScriptsOnlyBuild:
     className: PoisonedWaterScript
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlsMenu
+  - hash:
+      serializedVersion: 2
       Hash: 8cbb4873c01fb16a63b37ec9c902037d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -977,7 +1041,7 @@ ScriptsOnlyBuild:
     className: WaterTile
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: dfe48d79d420feb1bb24be49316f1805
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Corruption
@@ -1094,4 +1158,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Transition.unity
   - Assets/Scenes/Gameplay.unity
+  - Assets/Scenes/Controls.unity
   playerPath: C:/Users/Christopher/Documents/My games/DarkMoonBuild/Dark Moon.exe
