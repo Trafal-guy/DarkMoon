@@ -1159,4 +1159,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Transition.unity
   - Assets/Scenes/Gameplay.unity
   - Assets/Scenes/Controls.unity
-  playerPath: C:/Users/Christopher/Documents/My games/DarkMoonBuild/Dark Moon.exe
+  playerPath: "C:/Users/Usu\xE1rio/Desktop/DarkMoon/Dark Moon.exe"
